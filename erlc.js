@@ -4,8 +4,11 @@ const url = "https://api.policeroleplay.community/v1";
 
 export const erlc = {
   /**
-   * Set the key for the erlc module.
-   * @param {string} newKey - The new key to set.
+   * @module erlc
+   * @description A module for interacting with the ERLC API.
+   * @param {string} newKey - The key to use for the ERLC API. Obtain from your private server
+   * @see {@link https://apidocs.policeroleplay.community/for-developers/api-reference}
+   * @see {@link https://github.com/Brncray/erlc-wrapper}
    */
   setKey(newKey) {
     key = newKey;
@@ -126,7 +129,7 @@ export const erlc = {
     if (response.status === "403")
       throw new Error("Invalid KEY. 403 RATE LIMIT EXCEEDED");
     return response.json();
-  }, 
+  },
 
   /**
    * Fetch the mod calls from the ERLC API.
@@ -142,12 +145,11 @@ export const erlc = {
       throw new Error("Invalid KEY. 403 RATE LIMIT EXCEEDED");
     return response.json();
   },
-  
+
   /**
    * Fetch the server bans from the ERLC API.
-   * @returns {Promise<object>} The server bans.
    */
-  async getBans(){
+  async getBans() {
     const response = await fetch(`${url}/server/bans`, {
       headers: {
         "Server-Key": key,
@@ -156,6 +158,5 @@ export const erlc = {
     if (response.status === "403")
       throw new Error("Invalid KEY. 403 RATE LIMIT EXCEEDED");
     return response.json();
-  }
-
+  },
 };
