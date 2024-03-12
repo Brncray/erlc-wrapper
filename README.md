@@ -1,4 +1,5 @@
 ﻿# erlc-wrapper
+# Detailed documentation can be found [here](https://docs.brncray.me/product-guides/er-lc-api-wrapper)
 
 # Getting Started
 
